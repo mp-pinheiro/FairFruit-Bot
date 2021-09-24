@@ -1,0 +1,15 @@
+{
+    "controls": {
+        "up": "A Up",
+        "down": "A Down",
+        "left": "A Left",
+        "right": "A Right",
+        "a": "A",
+        "b": "B",
+        "z": "Z"
+    },
+    "options": {
+        "delay": 0.1,
+        "max": 1000
+    }
+}

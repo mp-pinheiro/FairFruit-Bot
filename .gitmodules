@@ -1,0 +1,3 @@
+[submodule "twitchkeywords"]
+	path = twitchkeywords
+	url = https://github.com/mp-pinheiro/twitchkeywords.git
