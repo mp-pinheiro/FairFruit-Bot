@@ -37,8 +37,26 @@ In order to pull messages from Twitch Chat, you'll need to create your own Twitc
     
     # fill in with your own Twitch credentials and channel
     TWITCH_OAUTH_PASS=<OAUTH KEY GENERATED IN LAST STEP>
-    TWITCH_CLIENT_ID=<CLIENT ID GENERATED IN LAST STEP>
+    TWITCH_CLIENT_ID=<NAME OF THE TWITCH CHANNEL> # this is not used current, just put in the name of the channel
     TWITCH_CHANNEL=<NAME OF THE TWITCH CHANNEL>
+    
+    # fill in with the path where you installed the BizHawk emulator
+    BIZZHAWK_PATH="D:/Emulators/BizHawk-2.3/EmuHawk.exe"
+    ```
+
+> ⚠️ Note: the `TWITCH_CLIENT_ID` is required to start the bot, but is currently not used. Just fill it in with the name of your channel or anything else.
+
+It should look something like this:
+
+```bash
+    # don't mess with these unless you know what you're doing
+    HOST=127.0.0.1
+    PORT=9999
+    
+    # fill in with your own Twitch credentials and channel
+    TWITCH_OAUTH_PASS=oauth:ktbpahwayb350w9shtivv21zl82t1a
+    TWITCH_CLIENT_ID=fairfruit
+    TWITCH_CHANNEL=fairfruit
     
     # fill in with the path where you installed the BizHawk emulator
     BIZZHAWK_PATH="D:/Emulators/BizHawk-2.3/EmuHawk.exe"
@@ -166,7 +184,24 @@ Check if the path to the emulator exe file is correct inside of your `.env` file
 ### Messages not going through
 
 1. Did you remember to run the `start()` command? Try running it
-1. Was there an error on your command prompt? This is very likely an `.env` file problem. Check the error, it might have information on what went wrong, you might be missing some important variables like the `CLIENT_ID`.
+1. Was there an error on your command prompt? This is very likely an `.env` file problem. Check the error, it might have information on what went wrong, you might be missing some important variables.
+    
+    The most common error should be:
+    
+    ```
+    Request to join the "your_channel_name" channel has timed out. Make sure the channel exists.
+    ```
+
+    It most likely means you got your `TWITCH_OAUTH_PASS` variable wrong. Follow the instructions above, and make sure to include the **entire full of characters**. It should look something like `oauth:things`.
+
+    If you see this error:
+
+    ```
+    Missing required environment variable 'TWITCH_CLIENT_ID'. Please add it to the '.env' file.
+    ```
+
+    Just check your env file and make sure to fill the missing variable, `TWITCH_CLIENT_ID` in this example.
+
 1. Is the `N64.lua` script running? Check your Lua Console for the green play icon mentioned above. Sometimes the script can crash, which will lead to a red stop icon appearing. If that happens, you'll need to refresh the script.
 
 ### How does the "double" gamemode work
