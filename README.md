@@ -24,10 +24,6 @@ In order to pull messages from Twitch Chat, you'll need to create your own Twitc
 
 1. Go to https://twitchapps.com/tmi/ and get your **OAuth Password**. This is linked to your logged in account, so if you're planing on using bot-like features (such as sending messages in chat), you'd probably wanna do this within a bot account.
 
-1. Go to the Twitch Developer Portal and register an **Application** to get your **Client ID** like so:
-
-    ![registration](https://i.imgur.com/Wjdl0aD.png)
-
 1. Navigate to the folder where you extracted the bot files and create a file named `.env` (just a _single dot followed by env_). Paste the following inside of the file:
 
     ```bash
